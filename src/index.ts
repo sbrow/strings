@@ -29,15 +29,9 @@ export const beforeFirst = curry((separator: string, str: string) =>
 // @todo Test
 export const beforeFirstWord = beforeFirst(" ");
 
-// /**
-//  * @param {String} str
-//  * @return {String}
-//  */
-// export function afterFirstWord(str) {
-//   return afterFirst(' ', str);
-// }
-
-// export const removeFirstWord = afterFirstWord;
+// @todo Test
+export const afterFirstWord: (str: string) => string = afterFirst(" ");
+export const removeFirstWord: (str: string) => string = afterFirstWord;
 
 // /**
 //  * @param {Number} maxChars
