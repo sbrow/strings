@@ -1,0 +1,7 @@
+.direnv
+docs
+lib
+node_modules
+CHANGELOG.md
+*.nix
+*.lock
