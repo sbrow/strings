@@ -20,7 +20,7 @@
 
     checks.x86_64-linux.default = bp.outputs.legacyPackages.x86_64-linux.buildYarnPackage {
         src = ./.;
-        yarnBuildMore = "yarn test";
+        yarnBuildMore = "yarn build; yarn test";
     };
   };
 }
