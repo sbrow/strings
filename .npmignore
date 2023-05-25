@@ -1,3 +1,4 @@
 .envrc
 src
+tsconfig.json
 flake.*

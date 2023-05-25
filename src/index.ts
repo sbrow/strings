@@ -1,4 +1,6 @@
-import { curry, isEmpty, tail, when } from "./utils";
+import { curry } from "./utils";
+
+export * from './trim';
 
 function escapeRegExp(str: string) {
   return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); // $& means the whole matched string
@@ -8,28 +10,13 @@ export const startsWith = curry((needle: string, haystack: string) => haystack.i
 
 export const endsWith = curry((needle: string, haystack: string) => (new RegExp(`${escapeRegExp(needle)}$`)).test(haystack));
 
-/**
- * Trims characters from the left side of a string.
- */
-export const ltrim = curry((cutset: string, str: string) => {
-  const _trim = (x: string) => ltrim(cutset)(tail(x));
-  // const _trim = compose(ltrim(cutset), tail);
+export const afterFirst = curry(
+  (separator: string, str: string) => str.substring(str.indexOf(separator) + 1, str.length),
+);
 
-  const trimmed: () => string = () => when((x: string = '') => cutset.includes(x.charAt(0)), _trim)(str);
-
-  return isEmpty(cutset) || isEmpty(str)
-  ? str
-  : trimmed()
-});
-
-// export const afterFirst = curry(
-//   /**
-//    * @param {String} separator
-//    * @param {String} str
-//    * @return {String}
-//    */
-//   (separator, str) => str.substring(str.indexOf(separator) + 1, str.length),
-// );
+export const afterLast = curry(
+  (separator: string, str: string) => str.substring(str.lastIndexOf(separator) + 1, str.length),
+);
 
 // export const beforeFirst = curry(
 //   /**
