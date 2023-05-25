@@ -7,8 +7,10 @@
   "repository": "https://github.com/sbrow/strings",
   "author": "Spencer Brower <brower.spencer@gmail.com>",
   "license": "MIT",
+  "private": false,
   "scripts": {
     "build": "tsc",
+    "build:docs": "typedoc --plugin typedoc-plugin-markdown --out docs src/index.ts",
     "test": "vitest --run"
   },
   "devDependencies": {
