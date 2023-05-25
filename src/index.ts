@@ -1,12 +1,12 @@
 import { curry, isEmpty, tail, when } from "./utils";
 
-// function escapeRegExp(string) {
-//   return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); // $& means the whole matched string
-// }
+function escapeRegExp(str: string) {
+  return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); // $& means the whole matched string
+}
 
 export const startsWith = curry((needle: string, haystack: string) => haystack.indexOf(needle) === 0);
 
-// export const endsWith = curry((needle, haystack) => (new RegExp(`${escapeRegExp(needle)}$`)).test(haystack));
+export const endsWith = curry((needle: string, haystack: string) => (new RegExp(`${escapeRegExp(needle)}$`)).test(haystack));
 
 /**
  * Trims characters from the left side of a string.

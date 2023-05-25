@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import fc from 'fast-check';
 import {
-  /*afterFirstWord, beforeFirstWord, endsWith,*/ ltrim, startsWith,
+  /*afterFirstWord, beforeFirstWord, */ endsWith, ltrim, startsWith,
 } from './index';
 
 describe('strings', () => {
@@ -16,6 +16,21 @@ describe('strings', () => {
             fc.assert(fc.property(fc.string(), fc.string(), (needle, haystack) => {
                 if (haystack.indexOf(needle) == 0) {
                     expect(startsWith(needle, haystack)).toBe(true);
+                }
+            }));
+        })
+    });
+    describe('endsWith', () => {
+        it('returns true if haystack end with needle', () => {
+            expect(endsWith('bar', 'foobar')).toBe(true);
+        })
+        it('returns true when haystack is needle', () => {
+            expect(endsWith('foo', 'foo')).toBe(true);
+        })
+        it('works', () => {
+            fc.assert(fc.property(fc.string(), fc.string(), (needle, haystack) => {
+                if (haystack.substring(haystack.indexOf(needle)) == needle) {
+                    expect(endsWith(needle, haystack)).toBe(true);
                 }
             }));
         })
