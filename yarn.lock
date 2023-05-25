@@ -134,6 +134,13 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-20.2.3.tgz#b31eb300610c3835ac008d690de6f87e28f9b878"
   integrity sha512-pg9d0yC4rVNWQzX8U7xb4olIOFuuVL9za3bzMT2pu2SU0SNEi66i2qrvhE2qt0HvkhuCaWJu7pLNOt/Pj8BIrw==
 
+"@types/ramda@^0.29.1":
+  version "0.29.1"
+  resolved "https://registry.yarnpkg.com/@types/ramda/-/ramda-0.29.1.tgz#c3d3842b9bc4aa5fbe03e90faa0c3eff9ba0f9f4"
+  integrity sha512-Ff5RRG9YRqMgWOqZVVavSjGEvYHUnXnGF0YPGbzIWhB3o8qiccSJZlFX2z8qm3G1H/IC5w0ozHmlezUeQCtGfQ==
+  dependencies:
+    types-ramda "^0.29.2"
+
 "@vitest/expect@0.31.1":
   version "0.31.1"
   resolved "https://registry.yarnpkg.com/@vitest/expect/-/expect-0.31.1.tgz#db8cb5a14a91167b948f377b9d29442229c73747"
@@ -514,10 +521,22 @@ tinyspy@^2.1.0:
   resolved "https://registry.yarnpkg.com/tinyspy/-/tinyspy-2.1.0.tgz#bd6875098f988728e6456cfd5ab8cc06498ecdeb"
   integrity sha512-7eORpyqImoOvkQJCSkL0d0mB4NHHIFAy4b1u8PHdDa7SjGS2njzl6/lyGoZLm+eyYEtlUmFGE0rFj66SWxZgQQ==
 
+ts-toolbelt@^9.6.0:
+  version "9.6.0"
+  resolved "https://registry.yarnpkg.com/ts-toolbelt/-/ts-toolbelt-9.6.0.tgz#50a25426cfed500d4a09bd1b3afb6f28879edfd5"
+  integrity sha512-nsZd8ZeNUzukXPlJmTBwUAuABDe/9qtVDelJeT/qW0ow3ZS3BsQJtNkan1802aM9Uf68/Y8ljw86Hu0h5IUW3w==
+
 type-detect@^4.0.0, type-detect@^4.0.5:
   version "4.0.8"
   resolved "https://registry.yarnpkg.com/type-detect/-/type-detect-4.0.8.tgz#7646fb5f18871cfbb7749e69bd39a6388eb7450c"
   integrity sha512-0fr/mIH1dlO+x7TlcMy+bIDqKPsw/70tVyeHW787goQjhmqaZe10uwLujubK9q9Lg6Fiho1KUKDYz0Z7k7g5/g==
+
+types-ramda@^0.29.2:
+  version "0.29.2"
+  resolved "https://registry.yarnpkg.com/types-ramda/-/types-ramda-0.29.2.tgz#2bf33863a51498b43f616cd8cd98227efe9109eb"
+  integrity sha512-HpLcR0ly2EfXQwG8VSI5ov6ml7PvtT+u+cp+7lZLu7q4nhnPDVW+rUTC1uy/SNs4aAyTUXri5M/LyhgvjEXJDg==
+  dependencies:
+    ts-toolbelt "^9.6.0"
 
 ufo@^1.1.2:
   version "1.1.2"

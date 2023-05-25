@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import fc from 'fast-check';
 import {
-  afterFirstWord, beforeFirstWord, endsWith, ltrim, startsWith,
+  /*afterFirstWord, beforeFirstWord, endsWith,*/ ltrim, startsWith,
 } from './index';
 
 describe('strings', () => {

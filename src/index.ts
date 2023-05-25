@@ -1,39 +1,25 @@
-// import { compose, curry, isEmpty, uncurryN, until, when, } from 'ramda'
-
 import { curry, isEmpty, tail, when } from "./utils";
 
 // function escapeRegExp(string) {
 //   return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); // $& means the whole matched string
 // }
 
-export const startsWith = curry((needle, haystack) => haystack.indexOf(needle) === 0);
+export const startsWith = curry((needle: string, haystack: string) => haystack.indexOf(needle) === 0);
+
 // export const endsWith = curry((needle, haystack) => (new RegExp(`${escapeRegExp(needle)}$`)).test(haystack));
 
-
-// export const ltrim = (cutset: string, str = undefined) => {
-//     if (str === undefined) {
-//         return str => ltrim(cutset, str);
-//     }
-
-//     if (isEmpty(cutset) || isEmpty(str)) {
-//         return str
-//     }
-
-//     // const _trim = x => ltrim(cutset)(tail(x));
-//     const _trim = compose(ltrim(cutset), tail)
-
-//     return when((x = '') => cutset.includes(x.charAt(0)), _trim)(str);
-
-// }
-
-/** String -> String -> String */
+/**
+ * Trims characters from the left side of a string.
+ */
 export const ltrim = curry((cutset: string, str: string) => {
-  const _trim = x => ltrim(cutset)(tail(x));
+  const _trim = (x: string) => ltrim(cutset)(tail(x));
   // const _trim = compose(ltrim(cutset), tail);
+
+  const trimmed: () => string = () => when((x: string = '') => cutset.includes(x.charAt(0)), _trim)(str);
 
   return isEmpty(cutset) || isEmpty(str)
   ? str
-  : when((x = '') => cutset.includes(x.charAt(0)), _trim, str);
+  : trimmed()
 });
 
 // export const afterFirst = curry(
