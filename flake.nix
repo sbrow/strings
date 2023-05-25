@@ -1,7 +1,14 @@
 {
   description = "Simple, functional, dependency free string manipulation in Vanilla JS";
 
-  outputs = { self, nixpkgs }: 
+  inputs = {
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-22.11";
+    # bp.url = "github:serokell/nix-npm-buildpackage";
+    bp.url = "github:sbrow/nix-npm-buildpackage";
+    bp.inputs.nixpkgs.follows = "nixpkgs";
+  };
+
+  outputs = { bp, self, nixpkgs }: 
   let
     pkgs = nixpkgs.legacyPackages.x86_64-linux;
   in {
@@ -11,23 +18,9 @@
       ];
     };
 
-    checks.x86_64-linux.default = pkgs.stdenv.mkDerivation {
-        name = "strings-check";
+    checks.x86_64-linux.default = bp.outputs.legacyPackages.x86_64-linux.buildYarnPackage {
         src = ./.;
-
-        nativeBuildInputs = with pkgs; [ yarn ];
-        buildPhase = ''
-          # this line removes a bug where value of $HOME is set to a non-writable /homeless-shelter dir
-          export HOME=$(pwd)
-
-          yarn
-          yarn test
-        '';
-        checkPhase = ''
-          yarn test
-        '';
-        installPhase = ''
-        '';
+        yarnBuildMore = "yarn test";
     };
   };
 }

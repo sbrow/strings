@@ -1,20 +1,44 @@
 {
   "nodes": {
-    "nixpkgs": {
+    "bp": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
       "locked": {
-        "lastModified": 1680665430,
-        "narHash": "sha256-MTVhTukwza1Jlq2gECITZPFnhROmylP2uv3O3cSqQCE=",
-        "path": "/nix/store/0acd255ca1v8m4xcg5wjhi9pgmx7q2s5-source",
-        "rev": "5233fd2ba76a3accb5aaa999c00509a11fd0793c",
-        "type": "path"
+        "lastModified": 1685037876,
+        "narHash": "sha256-ccqZqY6wUFot0ewyNKQUrMR6IEliGza+pjKoSVMXIeM=",
+        "owner": "sbrow",
+        "repo": "nix-npm-buildpackage",
+        "rev": "8a834ccbadee80c0ee313494f1ee95b0775b3f16",
+        "type": "github"
       },
       "original": {
-        "id": "nixpkgs",
-        "type": "indirect"
+        "owner": "sbrow",
+        "repo": "nix-npm-buildpackage",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1684936879,
+        "narHash": "sha256-BOSq/QiX7MDs8tUnAt4+nYTJctgYkzVSNL95qlfMYeM=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "99fe1b870522d6ee3e692c2b6e663d6868a3fde4",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-22.11",
+        "repo": "nixpkgs",
+        "type": "github"
       }
     },
     "root": {
       "inputs": {
+        "bp": "bp",
         "nixpkgs": "nixpkgs"
       }
     }

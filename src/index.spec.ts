@@ -5,6 +5,21 @@ import {
 } from './index';
 
 describe('strings', () => {
+    describe('startsWith', () => {
+        it('returns true if haystack starts with needle', () => {
+            expect(startsWith('foo', 'foobar')).toBe(true);
+        })
+        it('returns true when haystack is needle', () => {
+            expect(startsWith('foo', 'foo')).toBe(true);
+        })
+        it('works', () => {
+            fc.assert(fc.property(fc.string(), fc.string(), (needle, haystack) => {
+                if (haystack.indexOf(needle) == 0) {
+                    expect(startsWith(needle, haystack)).toBe(true);
+                }
+            }));
+        })
+    });
 //   describe('afterFirstWord', () => {
     // it('removes the first word', () => {
     //   fc.assert(fc.property(fc.string(), (str) => {
