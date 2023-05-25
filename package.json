@@ -2,11 +2,13 @@
   "name": "@sbrow/strings",
   "version": "0.1.0",
   "description": "Library for string manipulation",
-  "main": "src/index.ts",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
   "repository": "https://github.com/sbrow/strings",
   "author": "Spencer Brower <brower.spencer@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "build": "tsc",
     "test": "vitest --run"
   },
   "devDependencies": {
