@@ -1,5 +1,6 @@
 import { curry } from "./utils";
 
+export * from "./shorten";
 export * from "./trim";
 
 function escapeRegExp(str: string) {
@@ -32,27 +33,3 @@ export const beforeFirstWord = beforeFirst(" ");
 // @todo Test
 export const afterFirstWord: (str: string) => string = afterFirst(" ");
 export const removeFirstWord: (str: string) => string = afterFirstWord;
-
-// /**
-//  * @param {Number} maxChars
-//  * @param {String} str
-//  * @return {Boolean} False if str is longer than maxChars characters.
-//  */
-// const shorterThan = curry((maxChars, str) => str.length <= maxChars);
-
-// /**
-//  * @param {Number} maxChars The maximum length of the desired output string.
-//  * @param strategy a function that accepts a string and returns a shorter string.
-//  * @return {String} The input string, shortened to maxChars by strategy.
-//  */
-// const shortenString = (maxChars, strategy) => until(shorterThan(maxChars), strategy);
-
-// /**
-//  * @param {Number} maxChars
-//  * @param {String} str The string to remove words from.
-//  * @return {String} the shortened string.
-//  */
-// export const removeWordsFromStartOfString = uncurryN(
-//   2,
-//   (maxChars) => shortenString(maxChars, removeFirstWord),
-// );

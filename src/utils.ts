@@ -1,4 +1,4 @@
-import type { curry as _curry, when as _when } from "ramda";
+import type { curry as _curry, until as _until, when as _when } from "ramda";
 
 export const curry = function (fn) {
   return (...args) => {
@@ -18,3 +18,9 @@ export const tail = (str: string) => str.substring(1);
 export const when = curry((predicate, whenTrueFn, arg) => {
   return predicate(arg) ? whenTrueFn(arg) : arg;
 }) as typeof _when;
+
+export const until = curry((predicate, fn, arg) => {
+  const loop = (a: typeof arg): typeof a => predicate(a) ? a : loop(fn(a));
+
+  return loop(arg);
+}) as typeof _until;
