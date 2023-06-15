@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.4](https://github.com/sbrow/strings/compare/v0.1.3...v0.1.4) (2023-06-15)
+
+
+### Bug Fixes
+
+* re-built code. ([f46b68c](https://github.com/sbrow/strings/commit/f46b68c709b16fb67ea6df56271276f31b05a7fd))
+
 ### [0.1.3](https://github.com/sbrow/strings/compare/v0.1.2...v0.1.3) (2023-06-15)
 
 
