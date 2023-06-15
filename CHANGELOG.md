@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.3](https://github.com/sbrow/strings/compare/v0.1.2...v0.1.3) (2023-06-15)
+
+
+### Bug Fixes
+
+* beforeFirst now returns the input when needle is not present. ([ba96560](https://github.com/sbrow/strings/commit/ba9656059ba14887202463d02a6bca9edb3203a4))
+
 ### 0.1.2 (2023-05-30)
 
 
