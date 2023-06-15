@@ -23,9 +23,13 @@ export const afterLast = curry((separator: string, str: string) =>
   str.substring(str.lastIndexOf(separator) + 1, str.length)
 );
 
-export const beforeFirst = curry((separator: string, str: string) =>
-  str.substring(0, str.indexOf(separator))
-);
+export const beforeFirst = curry((separator: string, str: string) => {
+  const index = str.indexOf(separator);
+  
+  return index === -1
+    ? str
+    : str.substring(0, index)
+});
 
 // @todo Test
 export const beforeFirstWord = beforeFirst(" ");

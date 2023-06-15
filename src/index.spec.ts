@@ -71,8 +71,8 @@ describe("strings", () => {
       expect(beforeFirst(" ", "foo bar bat")).toBe("foo");
     });
 
-    it("removes everythin when needle is not present", () => {
-      expect(beforeFirst("&", "foo bar bat")).toBe("");
+    it("returns the input when needle is not present", () => {
+      expect(beforeFirst("&", "foo bar bat")).toBe("foo bar bat");
     });
   });
   //   describe('afterFirstWord', () => {
