@@ -1,3 +1,4 @@
+export * from "./shorten";
 export * from "./trim";
 export declare const startsWith: import("ts-toolbelt/out/Function/Curry").Curry<(needle: string, haystack: string) => boolean>;
 export declare const endsWith: import("ts-toolbelt/out/Function/Curry").Curry<(needle: string, haystack: string) => boolean>;
@@ -5,3 +6,5 @@ export declare const afterFirst: import("ts-toolbelt/out/Function/Curry").Curry<
 export declare const afterLast: import("ts-toolbelt/out/Function/Curry").Curry<(separator: string, str: string) => string>;
 export declare const beforeFirst: import("ts-toolbelt/out/Function/Curry").Curry<(separator: string, str: string) => string>;
 export declare const beforeFirstWord: import("ts-toolbelt/out/Function/Curry").Curry<(str: string) => string>;
+export declare const afterFirstWord: (str: string) => string;
+export declare const removeFirstWord: (str: string) => string;

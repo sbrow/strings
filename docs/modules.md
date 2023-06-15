@@ -81,7 +81,7 @@ ___
 
 #### Defined in
 
-[src/index.ts:34](https://github.com/sbrow/strings/blob/7b676b7/src/index.ts#L34)
+[src/index.ts:38](https://github.com/sbrow/strings/blob/559217a/src/index.ts#L38)
 
 ___
 
@@ -299,7 +299,7 @@ ___
 
 #### Defined in
 
-[src/index.ts:35](https://github.com/sbrow/strings/blob/7b676b7/src/index.ts#L35)
+[src/index.ts:39](https://github.com/sbrow/strings/blob/559217a/src/index.ts#L39)
 
 ___
 
