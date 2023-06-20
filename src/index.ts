@@ -1,7 +1,9 @@
 import { curry } from "./utils";
 
+export * from "./sentences";
 export * from "./shorten";
 export * from "./trim";
+export * from "./words";
 
 function escapeRegExp(str: string) {
   return str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"); // $& means the whole matched string
