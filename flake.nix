@@ -8,20 +8,21 @@
     bp.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { bp, self, nixpkgs }: 
-  let
-    pkgs = nixpkgs.legacyPackages.x86_64-linux;
-  in {
-    devShells.x86_64-linux.default = pkgs.mkShell {
-      buildInputs = with pkgs; [ 
-        nodejs
-        yarn
-      ];
-    };
+  outputs = { bp, self, nixpkgs }:
+    let
+      pkgs = nixpkgs.legacyPackages.x86_64-linux;
+    in
+    {
+      devShells.x86_64-linux.default = pkgs.mkShell {
+        buildInputs = with pkgs; [
+          nodejs
+          yarn
+        ];
+      };
 
-    checks.x86_64-linux.default = bp.outputs.legacyPackages.x86_64-linux.buildYarnPackage {
+      checks.x86_64-linux.default = bp.outputs.legacyPackages.x86_64-linux.buildYarnPackage {
         src = ./.;
         yarnBuildMore = "yarn build; yarn test";
+      };
     };
-  };
 }
