@@ -17,6 +17,8 @@
         buildInputs = with pkgs; [
           nodejs
           yarn
+
+          nodePackages.typescript-language-server
         ];
       };
 
